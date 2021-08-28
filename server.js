@@ -19,11 +19,11 @@ const Article = mongoose.model("Article", articleSchema);
 app.route("/articles")
 
 .get(function (req, res) {
-    Article.find(function (err, foundArticle) {
+    Article.find(function (err, foundArticles) {
         if(err){
             console.log(err);
         } else {
-            res.json(foundArticle);
+            res.json(foundArticles);
         }
     });
 })
@@ -37,7 +37,7 @@ app.route("/articles")
         if (err) {
             res.send(err);
         } else {
-            res.send("Successfully created a new article with title: " + req.body.title);
+            res.send("Successfully created a new article with title: " + req.body.title + ".");
         }
     });
 })
@@ -48,6 +48,18 @@ app.route("/articles")
             res.send(err);
         } else {
             res.send("Successfully deleted all articles.");
+        }
+    });
+});
+
+app.route("/articles/:articleTitle")
+
+.get(function(req, res) {
+    Article.findOne({title: req.params.articleTitle}, function(err, foundArticle) {
+        if (err) {
+            res.send("No article with title: " + req.params.articleTitle + " was found in the database.");
+        } else {
+            res.json(foundArticle);
         }
     });
 });
