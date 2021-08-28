@@ -62,6 +62,16 @@ app.route("/articles/:articleTitle")
             res.json(foundArticle);
         }
     });
+})
+
+.put(function(req, res) {
+    Article.updateOne({title: req.params.articleTitle}, {title: req.body.title, content: req.body.content}, function(err, result){
+        if (err) {
+            res.send(err);
+        } else {
+            res.send(result);
+        }
+    })
 });
 
 app.listen(PORT || 3000, function(){
