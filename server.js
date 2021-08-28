@@ -72,6 +72,16 @@ app.route("/articles/:articleTitle")
             res.send(result);
         }
     })
+})
+
+.patch(function(req, res) {
+    Article.updateOne({title: req.params.title}, {$set: req.body}, function(err, result){
+        if (err) {
+            res.send(err);
+        } else {
+            res.send(result);
+        }
+    });
 });
 
 app.listen(PORT || 3000, function(){
