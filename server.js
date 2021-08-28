@@ -23,8 +23,8 @@ app.get("/articles", function (req, res) {
         } else {
             res.json(foundArticle);
         }
-    })
-})
+    });
+});
 
 app.post("/articles", function(req, res){
     const newArticle = new Article({
@@ -36,6 +36,16 @@ app.post("/articles", function(req, res){
             res.send(err);
         } else {
             res.send("Successfully created a new article with title: " + req.body.title);
+        }
+    });
+});
+
+app.delete("/articles", function(req, res){
+    Article.deleteMany(function(err){
+        if (err) {
+            res.send(err);
+        } else {
+            res.send("Successfully deleted all articles.");
         }
     });
 });
