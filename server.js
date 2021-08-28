@@ -71,16 +71,26 @@ app.route("/articles/:articleTitle")
         } else {
             res.send(result);
         }
-    })
+    });
 })
 
 .patch(function(req, res) {
-    Article.updateOne({title: req.params.title}, {$set: req.body}, function(err, result){
+    Article.updateOne({title: req.params.articleTitle}, {$set: req.body}, function(err, result){
         if (err) {
             res.send(err);
         } else {
             res.send(result);
         }
+    });
+})
+
+.delete(function(req, res){
+    Article.deleteOne({title: req.params.articleTitle}, function(err, result){
+        if (err) {
+            res.send(err);
+        } else {
+            res.send(result);
+        };
     });
 });
 
