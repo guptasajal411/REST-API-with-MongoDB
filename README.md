@@ -5,7 +5,7 @@ This is my first RESTful API made with Node.js and Express.js. The database for 
 `GET`, `POST` and `DELETE` requests are supported on `articles`.
 Don't do `DELETE` requests on `/articles` until you want to delete ALL articles. Issued in public interest 😂
 ### /articles/articleName
-`GET`, `POST`, `PUT`, `PATCH` and `DELETE` requests are supported on `/articles/articleName`.
+`GET`, `PUT`, `PATCH` and `DELETE` requests are supported on `/articles/articleName`.
 
 Use **[dotenv](https://www.npmjs.com/package/dotenv)** for loading environmental variables. You can create a new `.env` file to store your MongoDB Atlas's username and password as `usernameMongoDB` and `password` respectively.
 
