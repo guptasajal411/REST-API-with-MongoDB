@@ -15,3 +15,6 @@ Use **[dotenv](https://www.npmjs.com/package/dotenv)** for loading environmental
 ------
 ### Types of HTTP Requests made to a REST API:
 ![image](https://user-images.githubusercontent.com/70312106/131220590-5797b558-6f94-49e4-b7fb-47ed71424e4d.png)
+------
+### RESTful API routes reference:
+![image](https://user-images.githubusercontent.com/70312106/131246209-accb0c29-7189-42ad-8e5a-0a2c1c01237c.png)
